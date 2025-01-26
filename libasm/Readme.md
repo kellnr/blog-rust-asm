@@ -1,10 +1,10 @@
 # Useful Information
 
-[Functions in ARM64](https://diveintosystems.org/book/C9-ARM64/functions.html)
-[Compiler Explorer](https://godbolt.org/) <- Set to armv8-a clang 16.0.0
-[ARM64 Calling Convention](https://duetorun.com/blog/20230615/a64-pcs-demo/#stack_layout)
-[ARM64 Calling Convention 2](https://dede.dev/posts/ARM64-Calling-Convention-Cheat-Sheet/)
-[HelloSilicon | ARM64 Assembly](https://github.com/below/HelloSilicon)
+- [Functions in ARM64](https://diveintosystems.org/book/C9-ARM64/functions.html)
+- [Compiler Explorer](https://godbolt.org/) <- Set to armv8-a clang 16.0.0
+- [ARM64 Calling Convention](https://duetorun.com/blog/20230615/a64-pcs-demo/#stack_layout)
+- [ARM64 Calling Convention 2](https://dede.dev/posts/ARM64-Calling-Convention-Cheat-Sheet/)
+- [HelloSilicon | ARM64 Assembly](https://github.com/below/HelloSilicon)
 
 
 ## Debugging with LLDB
