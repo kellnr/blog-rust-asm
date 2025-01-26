@@ -9,7 +9,7 @@
 
 ## Debugging with LLDB
 
-[LLDB Cheat Sheet](https://firexfly.com/lldb-cheatsheet/)
+- [LLDB Cheat Sheet](https://firexfly.com/lldb-cheatsheet/)
 
 ```bash
 # Start debugging
