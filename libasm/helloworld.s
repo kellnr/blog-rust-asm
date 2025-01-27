@@ -23,14 +23,11 @@ _main: mov	X0, #1		// 1 = StdOut
 	mov	x1, #3
 	bl	add
 
-	str	x0, [sp, #8]
 
-	mov	X0, #1		// 1 = StdOut
-	add	x1, sp, #8	// Load the string to print. PROBLEM: it's not a string, but an integer thus 50 + 3 = 53 is printed as ASCII 5
-	mov	X2, #8	    	// length of our string
-	mov	X16, #4		// Unix write system call
-	svc	#0x80		// Call kernel to output the string
-	add 	sp, sp, #16
+	str x0, [sp, #-16]! // = push x0 -> 16 byte alignment
+        adr    x0, format
+        bl      _printf
+        ldr     w0, [sp, #16] // = pop x0
 
 
 // Setup the parameters to exit the program
@@ -51,3 +48,4 @@ add:	sub	sp, sp, #16
 	ret
 
 helloworld:      .ascii  "Hello World!\n"
+format:		.ascii "Result: %ld\n"
