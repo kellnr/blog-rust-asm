@@ -6,6 +6,18 @@
 - [ARM64 Calling Convention 2](https://dede.dev/posts/ARM64-Calling-Convention-Cheat-Sheet/)
 - [HelloSilicon | ARM64 Assembly](https://github.com/below/HelloSilicon)
 
+## Build and run
+
+```bash
+# Build executable
+make # or make exe
+
+# Build dynamic library
+make dylib
+
+# List exported symbols from dynamic library
+nm -gU <dylib>
+```
 
 ## Debugging with LLDB
 

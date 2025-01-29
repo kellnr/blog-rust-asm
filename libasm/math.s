@@ -7,6 +7,7 @@
 //
 
 .global _main			// Provide program starting address to linker
+.global _add
 .align 4			// Make sure everything is aligned properly
 
 // Setup the parameters to print hello world
@@ -21,7 +22,7 @@ _main: mov	X0, #1		// 1 = StdOut
 
 	mov	x0, #50
 	mov	x1, #3
-	bl	add
+	bl	_add
 
 
 	str x0, [sp, #-16]! // = push x0 -> 16 byte alignment
@@ -36,7 +37,7 @@ _main: mov	X0, #1		// 1 = StdOut
 	mov     X16, #1		// System call number 1 terminates this program
 	svc     #0x80		// Call kernel to terminate the program
 
-add:	sub	sp, sp, #16 
+_add:	sub	sp, sp, #16 
 	str	x0, [sp, #8]
 	str	x1, [sp]
 
