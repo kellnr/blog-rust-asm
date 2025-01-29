@@ -8,6 +8,7 @@
 
 .global _main			// Provide program starting address to linker
 .global _add
+.global _sub
 .align 4			// Make sure everything is aligned properly
 
 // Setup the parameters to print hello world
@@ -44,6 +45,17 @@ _add:	sub	sp, sp, #16
 	ldr	x8, [sp, #8]
 	ldr	x9, [sp]
 	add	x0, x8, x9
+
+	add	sp, sp, #16
+	ret
+
+_sub:	sub	sp, sp, #16 
+	str	x0, [sp, #8]
+	str	x1, [sp]
+
+	ldr	x8, [sp, #8]
+	ldr	x9, [sp]
+	sub	x0, x8, x9
 
 	add	sp, sp, #16
 	ret
