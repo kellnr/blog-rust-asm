@@ -5,6 +5,7 @@
 - [ARM64 Calling Convention](https://duetorun.com/blog/20230615/a64-pcs-demo/#stack_layout)
 - [ARM64 Calling Convention 2](https://dede.dev/posts/ARM64-Calling-Convention-Cheat-Sheet/)
 - [HelloSilicon | ARM64 Assembly](https://github.com/below/HelloSilicon)
+- [ARM64 Assembly Instruction Set](https://developer.arm.com/documentation/dui0489/i/arm-and-thumb-instructions?lang=en)
 
 ## Build and run
 

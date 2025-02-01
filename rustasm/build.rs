@@ -13,11 +13,13 @@ fn main() {
         .output()
         .expect("Failed to build dylib");
 
-    // Link the library to the rust executable
+    // Copy the dylib to the target directory
     let libdir_path = PathBuf::from("../libasm")
         .canonicalize()
         .expect("cannot canonicalize library path");
     copy_dylib_to_target_dir(&libdir_path, "libMath.dylib");
+
+    // Link the library to the rust executable
     println!("cargo:rustc-link-search={}", env::var("OUT_DIR").unwrap());
     println!(
         "cargo:rustc-link-arg=-Wl,-rpath,{}",
