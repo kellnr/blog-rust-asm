@@ -36,4 +36,15 @@ mod tests {
         let c_str = unsafe { CString::from_raw(ptr) };
         assert_eq!(c_str.to_str().unwrap(), "HELLO");
     }
+
+    #[test]
+    fn test_upp2() {
+        let c_str = CString::new("HeLlO WoRlD 123!").unwrap();
+        let ptr = c_str.into_raw();
+
+        unsafe { upp(ptr) };
+
+        let c_str = unsafe { CString::from_raw(ptr) };
+        assert_eq!(c_str.to_str().unwrap(), "HELLO WORLD 123!");
+    }
 }

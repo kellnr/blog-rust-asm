@@ -95,8 +95,14 @@ loop:
 	ldrb	w4, [x3]	// load char into w4
 	cbz	x4, end		// compare zero, if zero, branch to end
 
+	cmp	w4, #'a'	// compare with 'a'
+	blt	inc		// if less than 'a', branch to end
+	cmp	w4, #'z'	// compare with 'z'
+	bgt	inc		// if greater than 'z', branch to end
+
 	eor	w4, w4, #32	// convert to uppercase
 	strb	w4, [x3]	// store back to memory
+inc:
 	add	x2, x2, #1	// increment counter
 	b	loop		
 
