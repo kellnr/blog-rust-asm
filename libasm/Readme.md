@@ -51,4 +51,7 @@ si
 
 # Single step (over)
 ni
+
+# Print memory at address
+x <address>
 ```
