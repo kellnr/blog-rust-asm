@@ -17,7 +17,7 @@ fn main() {
     let libdir_path = PathBuf::from("../libasm")
         .canonicalize()
         .expect("cannot canonicalize library path");
-    copy_dylib_to_target_dir(&libdir_path, "libMath.dylib");
+    copy_dylib_to_target_dir(&libdir_path, "libAsm.dylib");
 
     // Link the library to the rust executable
     println!("cargo:rustc-link-search={}", env::var("OUT_DIR").unwrap());
@@ -25,7 +25,7 @@ fn main() {
         "cargo:rustc-link-arg=-Wl,-rpath,{}",
         env::var("OUT_DIR").unwrap()
     );
-    println!("cargo:rustc-link-lib=Math");
+    println!("cargo:rustc-link-lib=Asm");
 }
 
 fn copy_dylib_to_target_dir(lib_dir: &Path, dylib: &str) {
