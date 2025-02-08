@@ -3,8 +3,8 @@ use std::process::Command;
 use std::{env, fs};
 
 fn main() {
-    // Tell cargo to rerun this build script if the math.s file changed
-    println!("cargo:rerun-if-changed=../libasm/math.s");
+    // Tell cargo to rerun this build script if the asm.s file changed
+    println!("cargo:rerun-if-changed=../libasm/asm.s");
 
     // Build the assembly file to a dylib
     let _output = Command::new("make")
