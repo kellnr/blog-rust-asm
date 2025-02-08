@@ -1,11 +1,11 @@
-exe: Math.o
-	ld -o Math Math.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _main -arch arm64
+exe: Asm.o
+	ld -o Asm Asm.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _main -arch arm64
 
-dylib: Math.o
-	ld -o libMath.dylib Math.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -arch arm64 -dylib 
+dylib: Asm.o
+	ld -o libAsm.dylib Asm.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -arch arm64 -dylib 
 
-Math.o: Math.s
-	as -arch arm64 -o Math.o math.s
+Asm.o: Asm.s
+	as -arch arm64 -o Asm.o asm.s
 
 clean:
-	rm -f Math Math.o libMath.dylib
+	rm -f Asm Asm.o libAsm.dylib
